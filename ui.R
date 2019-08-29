@@ -1,26 +1,3 @@
-## app.R ##
-# install.packages("sp")
-# install.packages("rgdal", repos="http://R-Forge.R-project.org", type="source")
-# install.packages("raster")
-# install.packages("shiny")
-# install.packages("RColorBrewer")
-# install.packages("malariaAtlas")
-# install.packages("shinydashboard")
-# install.packages("stringr")
-# install.packages("shinyalert")
-# install.packages("shinyBS")
-# install.packages("shinythemes")
-# install.packages("shinycssloaders")
-# install.packages("shinyjs")
-# install.packages("mapview")
-# install.packages("leaflet")
-# install.packages("kableExtra")
-# install.packages("plotfunctions")
-# install.packages("sf")
-# #devtools::install_github("r-spatial/mapview@develop")
-# install.packages("DT")
-#####################################################################################################################
-
 #### load required libraries ####
 if(!require(raster)){
   install.packages("raster")
@@ -87,6 +64,11 @@ if(!require(leaflet)){
   library(leaflet)
 }
 
+if(!require(DT)){
+  install.packages("DT")
+  library(DT)
+}
+
 # generate a list of countries for which MAP data exists
 # fix some encoding and country issues
 load('data/sf_afr_simp_fao.rda')
@@ -121,7 +103,7 @@ appCSS <- "
 "
 
 navbarPage(
-  "PMI-Malaria Initiative",
+  "MaDD - Malaria Data by District",
   tabPanel("Application",
            fluidPage(theme = shinytheme("flatly"),
                      useShinyalert(),
