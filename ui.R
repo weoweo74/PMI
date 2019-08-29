@@ -69,6 +69,11 @@ if(!require(DT)){
   library(DT)
 }
 
+if(!require(pacman)){
+  install.packages("pacman")
+  library(DT)
+}
+
 # generate a list of countries for which MAP data exists
 # fix some encoding and country issues
 load('data/sf_afr_simp_fao.rda')
