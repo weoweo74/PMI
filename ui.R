@@ -66,6 +66,10 @@ if(!require(DT)){
   install.packages("DT")
   library(DT)
 }
+if(!require(pacman)){
+  install.packages("pacman")
+  library(pacman)
+}
 
 # generate a list of countries for which MAP data exists
 # fix some encoding and country issues
